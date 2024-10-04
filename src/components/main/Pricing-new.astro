@@ -1,6 +1,6 @@
 ---
 import { CheckArrowIcon } from "../../assets/icons/CheckArrowIcon"
-import InvitationModal from "./InvitationModal.astro"
+import InvitationModal from "./InvitationModal.astro";
 
 const pricingData = [
   "Seamless integration",
@@ -81,48 +81,78 @@ const pricingPlans = [
                   </li>
                 ))}
               </ul>
+              <button
+                class="inline-block text-center py-2 px-4 w-full rounded-xl rounded-t-xl contained-button font-bold leading-loose mt-16 open-modal"
+                aria-label="Get started"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         ))}
       </div>
-      <div class="animate-fadeIn">
-        <button
-            onclick="window.openInvitationModal()"
-            class="inline-block text-center py-2 px-4 w-full rounded-xl rounded-t-xl contained-button font-bold leading-loose mt-16 open-modal"
-            aria-label="Get started"
-          >
-            Get Started
-        </button>    
     </div>
   </div>
-  <InvitationModal />
 </section>
+
+<div id="modal-container"></div>
 
 <script>
   let isMonthly = true;
-  const toggle = document.getElementById('pricing-toggle')
-  const periods = document.querySelectorAll('.pricing-period')
-  const monthlyText = document.querySelector('.monthly-text')
-  const yearlyText = document.querySelector('.yearly-text')
-  const priceValues = document.querySelectorAll('.price-value')
-  const modalButtons = document.querySelectorAll('.open-modal')
-  const modalContainer = document.getElementById('modal-container')
+  const toggle = document.getElementById('pricing-toggle');
+  const periods = document.querySelectorAll('.pricing-period');
+  const monthlyText = document.querySelector('.monthly-text');
+  const yearlyText = document.querySelector('.yearly-text');
+  const priceValues = document.querySelectorAll('.price-value');
+  const modalButtons = document.querySelectorAll('.open-modal');
+  const modalContainer = document.getElementById('modal-container');
 
-  const monthlyPrices = ["$0", "$19", "$36"]
-  const yearlyPrices = ["$0", "$180", "$390"]
+  const monthlyPrices = ["$0", "$19", "$36"];
+  const yearlyPrices = ["$0", "$180", "$390"];
 
   toggle?.addEventListener('change', () => {
-    isMonthly = !isMonthly
+    isMonthly = !isMonthly;
     
     periods.forEach(period => {
-      period.textContent = isMonthly ? '/ month' : '/ year'
-    })
+      period.textContent = isMonthly ? '/ month' : '/ year';
+    });
     
-    monthlyText?.classList.toggle('text-gray-400')
-    yearlyText?.classList.toggle('text-gray-400')
+    monthlyText?.classList.toggle('text-gray-400');
+    yearlyText?.classList.toggle('text-gray-400');
     
     priceValues.forEach((price, index) => {
-      price.textContent = isMonthly ? monthlyPrices[index] : yearlyPrices[index]
-    })
-  })
+      price.textContent = isMonthly ? monthlyPrices[index] : yearlyPrices[index];
+    });
+  });
+
+  // Modal handling
+  let modalOpen = false;
+
+  modalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (!modalOpen) {
+        modalOpen = true;
+        const modalElement = document.createElement('div');
+        modalElement.innerHTML = `
+          <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+            <div class="bg-bgDark3 p-8 rounded-3xl max-w-md w-full mx-4">
+              <h2 class="text-2xl font-bold text-primaryText mb-4">Get Started</h2>
+              <p class="text-gray-400 mb-6">Enter your email to start your free trial</p>
+              <input type="email" placeholder="Enter your email" class="w-full p-3 mb-4 rounded-xl bg-bgDark2 text-primaryText">
+              <div class="flex justify-end">
+                <button class="px-6 py-2 rounded-xl contained-button close-modal">Close</button>
+              </div>
+            </div>
+          </div>
+        `;
+        modalContainer?.appendChild(modalElement);
+
+        const closeButton = modalElement.querySelector('.close-modal');
+        closeButton?.addEventListener('click', () => {
+          modalContainer?.removeChild(modalElement);
+          modalOpen = false;
+        });
+      }
+    });
+  });
 </script>
