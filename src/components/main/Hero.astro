@@ -8,6 +8,9 @@ import dashboard from '../../assets/images/dashboard.jpg'
   class="w-screen flex justify-center items-center bg-bgDark1 mb-[28vw] md:mb-[18vw] lg:mb-[10vw] xl:mb-[13vw] 2xl:mb-60 hero-bg-gradient pb-24 sm:pb-32 md:pb-44 lg:pb-0"
   id="home"
 >
+
+
+<!-- Or, if you prefer using the global function: -->
   <div class="w-full md:w-[800px] xl:w-[900px] flex flex-col justify-center items-center pt-16 md:pt-16 lg:pt-20 text-center">
     <div class="animate-fadeIn">
       <h3 class="text-secondaryColor text-sm sm:text-base mb-6 sm:mt-32 mt-16 font-bold">
@@ -32,6 +35,7 @@ import dashboard from '../../assets/images/dashboard.jpg'
     <div class="animate-fadeIn">
       <div class="flex flex-col gap-2 sm:flex-row mt-14 mb-24 sm:mb-40 justify-center">
         <button
+          onclick="window.openInvitationModal()"
           class="contained-button w-64 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0"
           id="getStartedBtn"
           aria-label="Get started"
