@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import  InvitationModal  from './InvitationModal.astro';
+import  InvitationModal  from './InvitationModal.astro'
 import dashboard from '../../assets/images/dashboard.jpg'
 ---
 
@@ -78,16 +78,6 @@ import dashboard from '../../assets/images/dashboard.jpg'
   <InvitationModal />
 </section>
 
-<script>
-  const getStartedBtn = document.getElementById('getStartedBtn');
-  const liveDemoBtn = document.getElementById('liveDemoBtn');
-  const modal = document.querySelector('invitation-modal');
-
-  if (getStartedBtn && liveDemoBtn && modal) {
-    getStartedBtn.addEventListener('click', () => modal.open());
-    liveDemoBtn.addEventListener('click', () => modal.open());
-  }
-</script>
 
 <style>
   .animate-fadeIn {
