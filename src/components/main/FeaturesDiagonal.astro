@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'
 import  InvitationModal  from './InvitationModal.astro'
 import featuresdiagonal from "../../assets/images/featuresdiagonal.jpg";
 ---
@@ -62,13 +62,5 @@ import featuresdiagonal from "../../assets/images/featuresdiagonal.jpg";
   </div>
 </section>
 
-<InvitationModal client:load />
+<InvitationModal />
 
-<script>
-  const openModalButton = document.getElementById('openModal');
-  const modal = document.querySelector('invitation-modal');
-
-  openModalButton.addEventListener('click', () => {
-    modal.setAttribute('is-open', 'true');
-  });
-</script>

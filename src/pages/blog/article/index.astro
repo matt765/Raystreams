@@ -29,9 +29,8 @@ const articleData = {
 }
 ---
 
-<Layout title={articleData.title}>
-  <Navbar client:load />
+<Layout title={articleData.title}>  
   <Article articleData={articleData} />
   <Footer />
-  <ScrollUpButton client:load />
+  <ScrollUpButton lient:load />
 </Layout>
