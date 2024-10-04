@@ -1,0 +1,48 @@
+---
+---
+
+<button
+  id="scrollUpButton"
+  class="w-12 h-12 fixed bottom-6 right-6 main-border-gray rounded-xl bg-bgDark2 hover:bg-bgDark3 cursor-pointer flex justify-center items-center transition z-50 hidden"
+  aria-label="Scroll to top"
+>
+  <svg
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    width="35px"
+    height="35px"
+    viewBox="0 0 20 20"
+  >
+    <path
+      d="M4.16732 12.5L10.0007 6.66667L15.834 12.5"
+      stroke="rgb(99, 102, 241)"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></path>
+  </svg>
+</button>
+
+<script>
+  const scrollUpButton = document.getElementById('scrollUpButton');
+
+  function toggleVisible() {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrollUpButton) {
+      if (scrolled > 300) {
+        scrollUpButton.classList.remove('hidden');
+      } else {
+        scrollUpButton.classList.add('hidden');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', toggleVisible);
+
+  scrollUpButton?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+</script>
