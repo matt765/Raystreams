@@ -1,0 +1,43 @@
+/* Typography */
+
+.block-title {
+  @apply text-primaryText text-3xl font-bold tracking-normal;
+}
+.block-big-title {
+  @apply text-primaryText text-4xl xl:text-5xl font-bold tracking-normal;
+}
+.block-subtitle {
+  @apply text-xs text-secondaryColor  tracking-wider font-bold uppercase;
+}
+.content-title {
+  @apply text-primaryText text-lg font-bold tracking-normal;
+}
+.content-text-white {
+  @apply text-primaryText text-base leading-relaxed;
+}
+.content-text-gray {
+  @apply text-gray-400 text-base;
+}
+
+/* Borders */
+
+.main-border-gray {
+  @apply border border-solid border-mainBorder;
+}
+.main-border-gray-darker {
+  @apply border border-solid border-mainBorderDarker;
+}
+
+/* Buttons */
+
+.contained-button {
+  @apply rounded-lg font-bold bg-primaryColor text-primaryText flex justify-center items-center hover:bg-[#7274f3] cursor-pointer transition;
+}
+.outlined-button {
+  @apply text-primaryText main-border-gray rounded-xl bg-bgDark2 hover:bg-bgDark3  border-gray-700 text-sm;
+}
+
+/* Preventing FOUC */
+@font-face {
+  font-display: var(--fontsource-Inter-font-display, optional);
+}
