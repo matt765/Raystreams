@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 import { QuoteIcon } from "../../assets/icons/QuoteIcon";
-import testimonial1 from "../assets/images/testimonial1.png";
-import testimonial2 from "../assets/images/testimonial2.png";
-import testimonial3 from "../assets/images/testimonial3.png";
+import testimonial1 from "../../assets/images/testimonial1.png";
+import testimonial2 from "../../assets/images/testimonial2.png";
+import testimonial3 from "../../assets/images/testimonial3.png";
 
 const testimonialsData = [
   {

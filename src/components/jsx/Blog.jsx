@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-import blog1 from "../assets/images/blog1.png";
-import blog2 from "../assets/images/blog2.png";
-import blog3 from "../assets/images/blog3.png";
+import blog1 from "../../assets/images/blog1.png";
+import blog2 from "../../assets/images/blog2.png";
+import blog3 from "../../assets/images/blog3.png";
 
 const blogData = [
   {
