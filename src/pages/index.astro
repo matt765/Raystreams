@@ -1,32 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { Hero } from '../components/jsx/Hero.jsx'
-import { Navbar } from '../components/jsx/Navbar.jsx'
-import { Features1 } from '../components/jsx/Features1.jsx'
-import { Features2 } from '../components/jsx/Features2.jsx'
-import { Testimonials } from '../components/jsx/Testimonials.jsx'
-import { FeaturesDiagonal } from '../components/jsx/FeaturesDiagonal.jsx'
-import { Pricing } from '../components/jsx/Pricing.jsx'
-import { FAQ } from '../components/jsx/FAQ.jsx'
-import { Brands } from '../components/jsx/Brands.jsx'
-import { Blog } from '../components/jsx/Blog.jsx'
-import { Footer } from '../components/jsx/Footer.jsx'
-import { ScrollUpButton } from '../components/jsx/ScrollUpButton.jsx'
+import Layout from '../layouts/TestLayout.astro'
+import Hero  from '../components/main/Hero.astro' //
+import Features1  from '../components/main/Features1.astro' //
+import Features2  from '../components/main/Features2.astro' //
+import Testimonials  from '../components/main/Testimonials.astro' //
+import FeaturesDiagonal from '../components/main/FeaturesDiagonal.astro' //
+import Pricing from '../components/main/Pricing.astro' //
+import Brands from '../components/main/Brands.astro' //
+import FAQ from '../components/main/FAQ.astro' //
+import Blog from '../components/main/Blog.astro' //
+import ScrollUpButton from '../components/main/ScrollUpButton.astro' //
+import Footer from '../components/main/Footer.astro'
+
 import '../assets/css/Theme.css'
 import '../assets/css/Diagonals.css'
 ---
 
-<Layout title="Tailcast">
-  <Navbar client:load />
-  <Hero client:load />
-  <Features1 client:load />
-  <Features2 client:load />
-  <FeaturesDiagonal client:load />
-  <Pricing client:load />
-  <Brands client:load />
-  <Testimonials client:load />
-  <Blog client:load />
-  <FAQ client:load /> 
-  <Footer />
-  <ScrollUpButton client:load />
+<Layout title="welcome">
+    <Hero />
+    <Features1 />
+    <Features2 />
+    <FeaturesDiagonal />
+    <Pricing />
+    <Brands />
+    <Testimonials />
+    <Blog />
+    <FAQ />
+    <Footer />
+  <ScrollUpButton />
 </Layout>
+
