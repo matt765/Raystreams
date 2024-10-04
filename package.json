@@ -21,7 +21,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.8.1",
     "@fontsource/inter": "^5.0.18",
-    "astro": "^4.9.2",
+    "astro": "^4.15.11",
     "framer-motion": "^11.2.10",
     "npm": "^10.8.1",
     "npm-check-updates": "^16.14.20",
