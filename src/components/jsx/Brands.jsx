@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import { AmazonLogo } from "../assets/logos/AmazonLogo";
-import { DropboxLogo } from "../assets/logos/DropboxLogo";
-import { NetflixLogo } from "../assets/logos/NetflixLogo";
-import { SlackLogo } from "../assets/logos/SlackLogo";
-import { SpotifyLogo } from "../assets/logos/SpotifyLogo";
-import { StripeLogo } from "../assets/logos/StripeLogo";
+import { AmazonLogo } from "../../assets/logos/AmazonLogo";
+import { DropboxLogo } from "../../assets/logos/DropboxLogo";
+import { NetflixLogo } from "../../assets/logos/NetflixLogo";
+import { SlackLogo } from "../../assets/logos/SlackLogo";
+import { SpotifyLogo } from "../../assets/logos/SpotifyLogo";
+import { StripeLogo } from "../../assets/logos/StripeLogo";
 
 export const Brands = () => (
   <section className="py-12 sm:py-24 bg-bgDark1 w-full  lg:mt-16 mb-8 lg:mb-16">
