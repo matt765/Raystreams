@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets'
+import { QuoteIcon } from '../../assets/icons/QuoteIcon'
+import testimonial1 from '../../assets/images/testimonial1.png'
+import testimonial2 from '../../assets/images/testimonial2.png'
+import testimonial3 from '../../assets/images/testimonial3.png'
+
+const testimonialsData = [
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "The powerful analytic tools have helped us streamline our processes and make data-driven decisions that positively impact our efficiency. Tailcast has been a game-changer for our business. The platform is easy to use, and the insights we've gained have driven significant improvements.",
+    image: testimonial1,
+  },
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "The powerful analytic tools have helped us streamline our processes and make data-driven decisions that positively impact our efficiency. Tailcast has been a game-changer for our business. The platform is easy to use, and the insights we've gained have driven significant improvements.",
+    image: testimonial2,
+  },
+  {
+    customerName: "John Watkins",
+    customerTitle: "Founder of Dashflow",
+    content:
+      "The powerful analytic tools have helped us streamline our processes and make data-driven decisions that positively impact our efficiency. Tailcast has been a game-changer for our business. The platform is easy to use, and the insights we've gained have driven significant improvements.",
+    image: testimonial3,
+  },
+];
+---
+
+<section class="w-full flex justify-center pt-16 mb-16 lg:mb-32 bg-bgDark2 relative">
+  <div class="absolute -top-16" id="feedback"></div>
+  <div class="flex flex-col w-full lg:w-[1150px] justify-center">
+    <div class="animate-fadeIn">
+      <div class="block-subtitle text-center mb-6">Testimonials</div>
+      <div class="block-big-title text-center mb-20 px-8 sm:px-24 md:px-48">
+        People like you love Tailcast
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-5 xl:gap-10 px-6 xl:px-0 items-center">
+        {testimonialsData.map((testimonial, index) => (
+          <div
+            class="w-11/12 sm:w-4/5 md:w-[560px] lg:w-1/3 main-border-gray-darker rounded-xl bg-bgDark3 flex flex-col px-6 py-4"
+          >
+            <div class="flex mb-2">
+              <QuoteIcon />
+            </div>
+            <div class="content-text-white">"{testimonial.content}"</div>
+            <div class="flex mt-4 mb-2 xl:mt-8 xl:mb-4">
+              <div>
+                <Image
+                  src={testimonial.image}
+                  alt="Customer avatar"
+                  width={45}
+                  height={45}
+                  aria-label={testimonial.customerName}
+                />
+              </div>
+              <div class="flex flex-col ml-4">
+                <div class="content-text-white font-medium">
+                  {testimonial.customerName}
+                </div>
+                <div class="content-text-gray">
+                  {testimonial.customerTitle}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-fadeIn {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>

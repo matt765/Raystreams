@@ -1,0 +1,100 @@
+---
+const FAQData = [
+  {
+    question: "Can I upgrade or downgrade my plan at any time?",
+    answer:
+      "Yes, you can easily upgrade or downgrade your plan at any time. Simply navigate to the account settings in your dashboard and choose the desired plan. The changes will be reflected immediately, and any adjustments in pricing will be applied on your next billing cycle. Our support team is more than happy to provide guidance and recommendations.",
+  },
+  {
+    question: "How to claim your 25% discount offer?",
+    answer:
+      "To claim your 25% discount, simply sign up for an account and enter the promotional code at checkout. The discount will be applied automatically to your purchase.",
+  },
+  {
+    question: "What's your refund policy?",
+    answer:
+      "We offer a 30-day money-back guarantee on all our plans. If you're not satisfied with our product, simply contact our support team within 30 days of purchase for a full refund.",
+  },
+  {
+    question: "How to get support for the product?",
+    answer:
+      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
+  },
+];
+
+---
+
+<section class="relative -mt-8 sm:mt-0 pt-12 sm:pt-16 pb-16 bg-blueGray-50 overflow-hidden">
+  <div class="absolute -top-10" id="FAQ"></div>
+  <div class="relative z-10 container px-2 sm:px-8 lg:px-4 mx-auto w-11/12 sm:w-full">
+    <div class="md:max-w-4xl mx-auto">
+      <p class="mb-7 block-subtitle text-center">Have any questions?</p>
+      <h2 class="mb-16 block-big-title text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="mb-11 flex flex-wrap -m-1">
+        {FAQData.map((item, index) => (
+          <div class="w-full p-1">
+            <faq-box
+              title={item.question}
+              content={item.answer}
+              defaultOpen={index === 0}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  class FAQBox extends HTMLElement {
+    constructor() {
+      super()
+      const title = this.getAttribute('title')
+      const content = this.getAttribute('content')
+      const defaultOpen = this.getAttribute('defaultOpen') === 'true'
+
+      this.innerHTML = `
+        <div class="pt-2 sm:pt-6 pb-2 px-3 sm:px-8 rounded-3xl bg-bgDark3 main-border-gray-darker mb-4 relative hover:bg-bgDark3Hover cursor-pointer transition">
+          <div class="flex flex-col p-2 justify-center items-start">
+            <h3 class="content-title pt-3 sm:pt-0 pr-8 sm:pr-0">${title}</h3>
+            <p class="text-secondaryText pt-4 transition-height duration-300 overflow-hidden ${defaultOpen ? 'max-h-96' : 'max-h-0'}">
+              ${content}
+            </p>
+          </div>
+          <div class="absolute top-6 right-4 sm:top-8 sm:right-8">
+            <svg
+              width="28px"
+              height="30px"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="transition-all duration-500 ${defaultOpen ? 'rotate-[180deg]' : 'rotate-[270deg]'}"
+            >
+              <path
+                d="M4.16732 12.5L10.0007 6.66667L15.834 12.5"
+                stroke="#4F46E5"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      `
+
+      this.addEventListener('click', () => {
+        const content = this.querySelector('p');
+        const svg = this.querySelector('svg');
+        content.classList.toggle('max-h-0');
+        content.classList.toggle('max-h-96');
+        svg.classList.toggle('rotate-[180deg]');
+        svg.classList.toggle('rotate-[270deg]');
+      })
+    }
+  }
+
+  customElements.define('faq-box', FAQBox)
+</script>
+

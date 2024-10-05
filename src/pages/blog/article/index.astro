@@ -1,11 +1,11 @@
 ---
 import Layout from '../../../layouts/Layout.astro'
-import { Navbar } from '../../../components/Navbar.jsx'
-import { Article } from '../../../components/Article.jsx'
-import { Footer } from '../../../components/Footer.jsx'
+import  Article  from '../../../components/main/Article.astro'
+import  Footer  from '../../../components/main/Footer.astro'
 import blog1 from '../../../assets/images/blog1.jpg'
-import '../../../styles/Theme.css'
-import { ScrollUpButton } from '../../../components/ScrollUpButton'
+import  ScrollUpButton  from '../../../components/main/ScrollUpButton.astro'
+import '../../../assets/css/Theme.css'
+
 
 const articleData = {
   title: "AI and Machine Learning",
@@ -29,9 +29,8 @@ const articleData = {
 }
 ---
 
-<Layout title={articleData.title}>
-  <Navbar client:load />
+<Layout title={articleData.title}>  
   <Article articleData={articleData} />
   <Footer />
-  <ScrollUpButton client:load />
+  <ScrollUpButton lient:load />
 </Layout>
